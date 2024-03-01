@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+.container {
+    position: relative;
+}
+
+.clock {
+    width: 80vh;
+    height: 80vh;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock-sub-circle {
+    width: 56vh;
+    height: 56vh;
+    border-radius: 50%;
+    background-color: rgba(225, 225, 225, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 2;
+}
+
+#clock-numbers span.clock-number-hour {
+    position: absolute;
+    transform: rotate(calc(15deg * var(--i))); 
+    /* inset: 12px; */
+    inset: 17%;
+    text-align: center;
+}
+
+#clock-numbers span.clock-number-hour b {
+    transform: rotate(calc(-15deg * var(--i)));
+    display: inline-block;
+    font-size: 30px;
+    color: #ddd; 
+}
+
+#clock-ticks span.clock-tick {
+    position: absolute;
+    transform: rotate(calc(6deg * var(--i))); 
+    inset: 5%;
+    text-align: center;
+    justify-content: center;
+    /* color: #eee;
+    background-color: #eee; */
+    width: 90%;
+    height: 90%;
+}
+
+#clock-ticks span.clock-tick b {
+    position: absolute;
+    /* transform: rotate(calc(-45deg));  */
+    text-align: center;
+    background-color: #bbb;
+    height: 10px;
+    width: 4px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+#clock-ticks span.clock-tickn {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i))); 
+    inset: 1%;
+    text-align: center;
+    justify-content: center;
+    /* color: #eee;
+    background-color: #eee; */
+    width: 98%;
+    height: 98%;
+}
+
+#clock-ticks span.clock-tickn b {
+    position: absolute;
+    color: #bbb;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    font-size: 25px;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    height: var(--h);
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
